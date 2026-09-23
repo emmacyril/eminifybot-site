@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "plans": {
+    "enforce": false,
+    "upgradeUrl": "https://eminifybot.com/#pricing",
+    "limits": {
+      "free": { "organisations": 1, "exports": false, "whiteLabel": false },
+      "pro": { "organisations": 3, "exports": true, "whiteLabel": false },
+      "agency": { "organisations": null, "exports": true, "whiteLabel": true }
+    }
+  },
+  "licence": { "provider": null, "organizationId": null, "plans": {} },
+  "update": { "minimumVersion": null, "message": null, "downloadUrl": "https://eminifybot.com/#download" },
+  "services": { "controlPlaneUrl": "https://accounts.eminifybot.com" }
+}

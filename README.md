@@ -51,3 +51,17 @@ Import this repository in Vercel. It detects Next.js; no settings or environment
   <img src="public/screenshots/model-picker.png" width="400" alt="Model picker">
   <img src="public/screenshots/approval-card.png" width="400" alt="Approval card">
 </p>
+
+## `public/policy.json`: remote control for every installed app
+
+Every EminifyBot install reads https://eminifybot.com/policy.json (falling back to this repo's raw copy) at start and every 6 hours, and caches it. Editing it and pushing reaches all copies, including ones downloaded before a change.
+
+| Field | Effect |
+|---|---|
+| `plans.enforce` | `true` turns paid plans on. Installs without a licence drop to the free limits: 1 organisation, no budgets/billing/audit exports, no white-label. Extra organisations are kept safe but can't be opened until the user upgrades. |
+| `plans.limits` | Limits per plan (`organisations: null` means unlimited). |
+| `licence.provider` | `"polar"` or `"lemonsqueezy"`. Keys entered in the app (Organisations → Enter Licence Key…) are checked with that provider. `organizationId` is the Polar organisation id; `plans` maps a Polar benefit id or Lemon Squeezy variant/product id to `"pro"` or `"agency"` (default `"pro"`). |
+| `update.minimumVersion` | e.g. `"0.2.0"`: older versions show "Please update" and quit. |
+| `services.controlPlaneUrl` | Account service for phone pairing and remote access. |
+
+Malformed values are ignored and the app keeps its defaults, so a typo can't break installs. Validate before pushing: `node -e "JSON.parse(require('fs').readFileSync('public/policy.json','utf8'))"`.
