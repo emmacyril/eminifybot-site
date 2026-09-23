@@ -4,6 +4,8 @@
 
 <p align="center">The landing page for <a href="https://github.com/emmacyril/EminifyBot">EminifyBot</a>, your AI team in a chat app.</p>
 
+<p align="center"><img src="public/screenshots/hero.png" alt="The EminifyBot app shown on the site" width="820"></p>
+
 ---
 
 Built with **Next.js 16** (App Router), **React 19** and **TypeScript**. No UI framework: one hand-written stylesheet with light and dark themes driven by CSS variables.
@@ -14,6 +16,7 @@ Built with **Next.js 16** (App Router), **React 19** and **TypeScript**. No UI f
 |---|---|---|
 | Hero and live demo | `components/Hero.tsx`, `components/AppDemo.tsx` | A scripted replica of the app. Visitors switch organisation, pick bots, approve actions and type. |
 | Download | `components/Downloads.tsx` | Direct links to the newest installers, read from GitHub Releases and refreshed hourly (`lib/release.ts`). |
+| The real app | `components/RealApp.tsx` | Theme-aware screenshot (light `hero.png`, dark `hero-dark.png`) plus channel and onboarding shots. |
 | Features | `components/Features.tsx` | Real app screenshots from `public/screenshots/`. |
 | Give each bot a job | `components/BotJobs.tsx` | Role picker driving a phone preview. |
 | Pricing | `components/Pricing.tsx` | Monthly and yearly toggle. Plans live in `lib/content.ts`. |
@@ -36,3 +39,15 @@ Import this repository in Vercel. It detects Next.js; no settings or environment
 ## Screenshots
 
 `public/screenshots/*.png` are captured from the real EminifyBot app running against an isolated test instance. Replace a file with the same name to update it; a feature card only shows an image when its file exists.
+
+| File | Used for |
+|---|---|
+| `hero.png`, `hero-dark.png` | "And this is the real thing" section |
+| `model-picker.png`, `computer-panel.png`, `approval-card.png`, `connected-apps.png`, `org-settings.png`, `context-menu.png` | Feature cards |
+| `channel.png`, `onboarding.png` | Real-app row |
+| `settings.png`, `org-preparing.png` | Spare, for posts and docs |
+
+<p align="center">
+  <img src="public/screenshots/model-picker.png" width="400" alt="Model picker">
+  <img src="public/screenshots/approval-card.png" width="400" alt="Approval card">
+</p>

@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
+import { RealApp } from "@/components/RealApp";
 import { Downloads } from "@/components/Downloads";
 import { Teammates } from "@/components/Teammates";
 import { ManyBots } from "@/components/ManyBots";
@@ -21,6 +22,7 @@ export default async function Home() {
       <Nav />
       <main id="top">
         <Hero downloads={downloads} />
+        <RealApp />
         <Downloads downloads={downloads} />
         <Teammates />
         <ManyBots />
